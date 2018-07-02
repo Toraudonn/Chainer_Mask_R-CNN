@@ -1,3 +1,5 @@
 __pycache*
 result
 *.png
+data
+modelfiles

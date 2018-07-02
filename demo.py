@@ -43,9 +43,14 @@ def main():
     if args.bn2affine:
         bn_to_affine(model)
     img = utils.read_image(args.image, color=True)
+    print(img.shape)
     bboxes, labels, scores, masks = model.predict([img])
     bbox, label, score, mask = bboxes[0], np.asarray(labels[0],dtype=np.int32), scores[0], masks[0]
     #print(bbox, np.asarray(label,dtype=np.int32), score, mask)
+    for m in mask:
+        print(len(m))
+
+    print(len(mask[0][0]))
 
     coco_label_names=('background',  # class zero
             'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light',
