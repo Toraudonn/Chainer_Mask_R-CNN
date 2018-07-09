@@ -11,7 +11,7 @@ def main():
     parser.add_argument('--image', type=str)
     parser.add_argument('--roi_size', '-r', type=int, default=14, help='ROI size for mask head input')
     parser.add_argument('--roialign', action='store_false', default=True, help='default: True')
-    parser.add_argument('--contour', action='store_true', default=False, help='visualize contour')
+    parser.add_argument('--contour', action='store_true', default=True, help='visualize contour')
     parser.add_argument('--background', action='store_true', default=False, help='background(no-display mode)')
     parser.add_argument('--bn2affine', action='store_true', default=False, help='batchnorm to affine')
     parser.add_argument('--extractor', choices=('resnet50','resnet101'),
@@ -50,7 +50,7 @@ def main():
     for m in mask:
         print(len(m))
 
-    print(len(mask[0][0]))
+    # print(len(mask[0][0]))
 
     coco_label_names=('background',  # class zero
             'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light',

@@ -51,7 +51,7 @@ def vis_bbox(img, bbox, label=None, score=None, mask=None, label_names=None, ax=
         raise ValueError('The length of score must be same as that of bbox')
 
     # alpha-blend the masks
-    COLOR=[(1,1,0), (1,0,1),(0,1,1),(0,0,1),(0,1,0), (1,0,0),(0.1,1,0.2)]
+    COLOR=[(1,1,0), (1,0,1), (0,1,1), (0,0,1), (0,1,0), (1,0,0), (0.1,1,0.2)]
     dst = img.astype(float)
     for i, m in enumerate(mask):
         alpha = np.tile(np.round(m), (3, 1, 1)).astype(float) * 0.4
