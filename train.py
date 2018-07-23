@@ -14,12 +14,12 @@ import time
 from mask_rcnn_resnet import MaskRCNNResNet
 from coco_dataset import COCODataset
 from mask_rcnn_train_chain import MaskRCNNTrainChain
-from utils.bn_utils import freeze_bn, bn_to_affine
-from utils.cocoapi_evaluator import COCOAPIEvaluator
-from utils.detection_coco_evaluator import DetectionCOCOEvaluator
+from .utils.bn_utils import freeze_bn, bn_to_affine
+from .utils.cocoapi_evaluator import COCOAPIEvaluator
+from .utils.detection_coco_evaluator import DetectionCOCOEvaluator
 import logging
 import traceback
-from utils.updater import SubDivisionUpdater
+from .utils.updater import SubDivisionUpdater
 import cv2
 
 def resize_bbox(bbox, in_size, out_size):

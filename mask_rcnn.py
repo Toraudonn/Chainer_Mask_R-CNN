@@ -10,7 +10,7 @@ from chainercv.utils import non_maximum_suppression
 from chainercv.transforms.image.resize import resize
 import cv2
 import pycocotools
-from utils.box_utils import bbox_yxyx2xywh, im_mask
+from .utils.box_utils import bbox_yxyx2xywh, im_mask
 
 class MaskRCNN(chainer.Chain):
     def __init__(self, extractor, rpn, head, mean,
