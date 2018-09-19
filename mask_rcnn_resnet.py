@@ -3,16 +3,17 @@ import numpy as np
 import chainer
 import chainer.functions as F
 import chainer.links as L
-from .mask_rcnn import MaskRCNN
-#from chainercv.links.model.faster_rcnn.region_proposal_network import \
-#    RegionProposalNetwork
-from .utils.region_proposal_network import RegionProposalNetwork
-from .utils import roi_align_2d
 from chainer.links.model.vision.resnet import BuildingBlock, _retrieve
 from chainer.links.connection.convolution_2d import Convolution2D
 from chainer.links.connection.linear import Linear
 from chainer.links.normalization.batch_normalization import BatchNormalization
 from chainer.initializers import constant
+
+from .mask_rcnn import MaskRCNN
+#from chainercv.links.model.faster_rcnn.region_proposal_network import \
+#    RegionProposalNetwork
+from .utils.region_proposal_network import RegionProposalNetwork
+from .utils import roi_align_2d
 
 class ExtractorResNet(chainer.link.Chain):
     def __init__(self, pretrained_model='auto', n_layers=50, roi_size=14):

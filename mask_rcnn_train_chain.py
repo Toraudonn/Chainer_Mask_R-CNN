@@ -3,11 +3,12 @@ import numpy as np
 import chainer
 from chainer import cuda
 import chainer.functions as F
-
 from chainercv.links.model.faster_rcnn.utils.anchor_target_creator import AnchorTargetCreator
-from .utils.proposal_target_creator import ProposalTargetCreator
 from chainer import computational_graph as c
 from chainercv.links import PixelwiseSoftmaxClassifier
+
+from .utils.proposal_target_creator import ProposalTargetCreator
+# from utils.proposal_target_creator import ProposalTargetCreator
 
 class MaskRCNNTrainChain(chainer.Chain):
     def __init__(self, mask_rcnn, rpn_sigma=3., roi_sigma=1., gamma=1,
